@@ -60,7 +60,7 @@ def get_stats_if_relevant(query):
 # Gemini generation with injected context and real stats
 def generate_answer_with_gemini(query, context_docs, extra_stats=None):
     # Secure key loading
-    genai.configure(api_key="AIzaSyD62sGUTlM58z0y_2RDKFg6hAemwZrOyeM")
+    genai.configure(api_key="os.getenv("GOOGLE_API_KEY")")
     model_gemini = genai.GenerativeModel('gemini-2.0-flash')
 
     context = "\n".join(context_docs)
